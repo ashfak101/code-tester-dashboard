@@ -3,11 +3,28 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { MonacoEditor } from '@/components/monaco-editor';
-import { EnhancedMarkdownEditor } from '@/components/enhanced-markdown-editor';
+import dynamic from 'next/dynamic';
+
+const MonacoEditor = dynamic(
+  () => import('@/components/monaco-editor').then((mod) => mod.MonacoEditor),
+  { ssr: false }
+);
+
+const EnhancedMarkdownEditor = dynamic(
+  () =>
+    import('@/components/enhanced-markdown-editor').then(
+      (mod) => mod.EnhancedMarkdownEditor
+    ),
+  { ssr: false }
+);
+
+const CodeTester = dynamic(
+  () => import('@/components/code-tester').then((mod) => mod.CodeTester),
+  { ssr: false }
+);
+
 import { FileSidebar } from '@/components/file-sidebar';
 import { ProblemForm } from '@/components/problem-form';
-import { CodeTester } from '@/components/code-tester';
 import {
   FileText,
   Code2,

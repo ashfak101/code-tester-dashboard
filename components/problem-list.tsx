@@ -172,7 +172,7 @@ export function ProblemList() {
               Manage your coding problems and track their performance
             </p>
           </div>
-          <Link href={'/create'} className='cursor-pointer'>
+          <Link href={'/problems'} className='cursor-pointer'>
 
             <Button className='flex items-center cursor-pointer'>
               <Edit className='h-4 w-4 mr-2 cursor-pointer' />

@@ -1,9 +1,15 @@
 'use client';
 
-import { ProblemEditor } from '@/components/problem-editor';
+import { ProblemEditor } from '@/components/problem-editor'
+
 import React from 'react';
+;
 
 const CreatePage = () => {
+  if (typeof window !== 'undefined') {
+    // safe to use window
+  }
+
   return (
     <div className='min-h-screen bg-gradient-to-br from-background via-background to-muted/20'>
       <div className='flex'>
@@ -14,9 +20,7 @@ const CreatePage = () => {
                 <h1 className='text-4xl font-bold text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'>
                   Problem Editor
                 </h1>
-
               </div>
-
             </div>
             <ProblemEditor />
           </div>
