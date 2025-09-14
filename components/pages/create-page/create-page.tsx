@@ -1,3 +1,5 @@
+'use client';
+
 import { ProblemEditor } from '@/components/problem-editor';
 import React from 'react';
 
@@ -14,7 +16,7 @@ const CreatePage = () => {
                 </h1>
 
               </div>
-              
+
             </div>
             <ProblemEditor />
           </div>

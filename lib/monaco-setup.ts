@@ -10,6 +10,7 @@ declare global {
 
 // Define the Monaco Editor environment to handle workers
 export function setupMonacoEnvironment () {
+    if (typeof window === 'undefined') return // Prevent SSR error
     window.MonacoEnvironment = {
         getWorkerUrl: function (_, label) {
             if (label === 'json') {
