@@ -63,9 +63,9 @@ const handler = NextAuth({
     session: {
         strategy: "jwt",
     },
-      jwt: {
-    secret: 'asfujhasofhoashfoasifhoiashfoasifhoasfash',
-        },
+    jwt: {
+        secret: 'asfujhasofhoashfoasifhoiashfoasifhoasfash',
+    },
     callbacks: {
         async session ({ session, token }) {
             if (session.user && token.sub) {
@@ -74,6 +74,7 @@ const handler = NextAuth({
             return session
         },
     },
+    secret: 'asfujhasofhoashfoasifhoiashfoasifhoasfash',
 })
 
 export { handler as GET, handler as POST }
